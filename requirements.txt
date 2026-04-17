@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-community
+openai
+chromadb
+python-multipart
+python-dotenv
+langchain-google-genai
+docx2txt
+pypdf
+rank_bm25
+psycopg[binary]
+PyJWT[crypto]
+tiktoken 
