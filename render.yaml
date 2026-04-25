@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: rag-assistant
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_CHAT_MODEL
+        value: gpt-4o-mini
+      - key: EMBEDDINGS_PROVIDER
+        value: openai
+      - key: OPENAI_EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: EMBEDDING_DIMENSIONS
+        value: "1536"
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_CONNECT_TIMEOUT
+        value: "5"
+      - key: VECTOR_BACKEND
+        value: pgvector
+      - key: PGVECTOR_INIT_ON_STARTUP
+        value: "false"
+      - key: STORAGE_BACKEND
+        value: supabase
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_JWKS_URL
+        sync: false
+      - key: SUPABASE_STORAGE_BUCKET
+        value: documents
+      - key: SUPABASE_STORAGE_PUBLIC
+        value: "false"
+      - key: AUTH_REQUIRED
+        value: "true"
+      - key: CORS_ORIGINS
+        sync: false
+      - key: VITE_API_BASE_URL
+        value: ""
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
