@@ -3,9 +3,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import HTTPException
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import Docx2txtLoader, PyPDFLoader, TextLoader
 from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from app.embeddings import get_embeddings
 from app.vectorstore import add_documents
