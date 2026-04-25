@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
+      '/health': 'http://localhost:8000',
       '/upload': 'http://localhost:8000',
       '/query': 'http://localhost:8000',
       '/projects': 'http://localhost:8000',
